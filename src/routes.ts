@@ -14,6 +14,8 @@ import { CheckSubscriptionController } from './controllers/haircut/CheckSubscrip
 import { CountHaircutsController } from './controllers/haircut/CountHaircutsController'
 import { DetailHaircutController } from './controllers/haircut/DetailHaircutController'
 
+import { NewScheduleController } from './controllers/schedule/NewScheduleController'
+
 const router = Router()
 
 // -- USER ROUTES --
@@ -41,5 +43,8 @@ router.get(
   isAuthenticated,
   new DetailHaircutController().handle
 )
+
+// -- SCHEDULES ROUTES
+router.post('/schedule', isAuthenticated, new NewScheduleController().handle)
 
 export { router }
