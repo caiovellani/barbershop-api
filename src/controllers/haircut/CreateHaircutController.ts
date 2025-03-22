@@ -17,3 +17,5 @@ class CreateHaircutController {
     return response.json(haircut)
   }
 }
+
+export { CreateHaircutController }
