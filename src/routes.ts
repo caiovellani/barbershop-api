@@ -15,6 +15,7 @@ import { CountHaircutsController } from './controllers/haircut/CountHaircutsCont
 import { DetailHaircutController } from './controllers/haircut/DetailHaircutController'
 
 import { NewScheduleController } from './controllers/schedule/NewScheduleController'
+import { ListScheduleController } from './controllers/schedule/ListScheduleController'
 
 const router = Router()
 
@@ -46,5 +47,6 @@ router.get(
 
 // -- SCHEDULES ROUTES
 router.post('/schedule', isAuthenticated, new NewScheduleController().handle)
+router.get('/schedule', isAuthenticated, new ListScheduleController())
 
 export { router }
